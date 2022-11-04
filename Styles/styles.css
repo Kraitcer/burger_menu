@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hibana", sans-serif;
+}
+body.lock {
+  overflow: hidden;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(even) {
+  background-color: #f15412;
+}
+section:nth-child(odd) {
+  background-color: #34b3f1;
+}
+
+.title {
+  font-size: 100px;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
+footer {
+  height: 40vw;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 100px;
+}
+@media (max-width: 768px) {
+  footer {
+    font-size: 30px;
+  }
+}
+
+.header {
+  background-color: #000;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header_logo {
+  background-color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .menu_icon {
+    display: block;
+    width: 30px;
+    height: 18px;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+  }
+  .menu_icon.active span {
+    transform: scale(0);
+  }
+  .menu_icon.active span:first-child {
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+  .menu_icon.active span:last-child {
+    transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+  .menu_icon span {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.2s;
+  }
+  .menu_icon span:first-child {
+    top: 0;
+  }
+  .menu_icon span:last-child {
+    top: auto;
+    bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .menu_body {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: #f15412;
+    display: flex;
+    overflow: auto;
+    transition: all 0.2s;
+  }
+}
+.menu_body.active {
+  left: 0;
+}
+.menu_list {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .menu_list {
+    flex-direction: column;
+    gap: 0;
+    padding: 30px;
+    margin: auto;
+  }
+}
+.menu_link {
+  color: #fff;
+  text-decoration: none;
+}
+.menu_link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .menu_link {
+    display: block;
+    font-size: 30px;
+    line-height: 70px;
+  }
+}/*# sourceMappingURL=styles.css.map */
